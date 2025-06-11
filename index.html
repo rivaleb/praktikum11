@@ -14,20 +14,19 @@
     </style>
 </head>
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' renderer="colorManagement: true;">
+    <a-marker type="pattern" url="markerpat.patt">
+        <a-entity
+            gltf-model="kupu-kupu.gltf"
+            scale="10 10 10"
+            position="0 1 0"
+            animation-mixer="loop: repeat"
+            gesture-handler
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 6500; easing: linear;">
+        </a-entity>
+    </a-marker>
 
-        <a-marker type="pattern" url="markerpat.patt">
-            <a-entity
-                gltf-model="kupu-kupu.gltf"
-                scale="10 10 10"
-                position="0 1 0"
-                animation-mixer="loop: repeat"
-                gesture-handler
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 6500; easing: linear;">
-            </a-entity>
-        </a-marker>
-
-        <a-entity camera></a-entity>
-    </a-scene>
+    <a-entity camera></a-entity>
+</a-scene>
 </body>
 </html>
